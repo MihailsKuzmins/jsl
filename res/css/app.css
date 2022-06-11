@@ -1,0 +1,17 @@
+.page-container {
+	margin-top: 66.56px;
+}
+
+.section-header {
+	margin-top: 20px !important;
+	margin-bottom: 7.5px !important;
+	color: var(--mdb-primary);
+	border-bottom: 2.25px solid var(--mdb-primary);
+	font-weight: bold;
+}
+
+.section-subheader {
+	margin-top: 15px !important;
+	margin-bottom: 0px !important;
+	color: var(--mdb-primary);
+}
