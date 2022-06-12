@@ -15,3 +15,8 @@
 	margin-bottom: 0px !important;
 	color: var(--mdb-primary);
 }
+
+.prom-vid {
+	max-width: 700px !important;
+	margin: auto !important;
+}
