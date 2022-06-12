@@ -41,7 +41,31 @@
 	</nav>
 
 	<div class="container page-container pb-5">
-		<h1>IN development</h1>
+		<div class="row">
+			<video class="prom-vid" poster="./res/data/prom-vid-thumbnail.png" controls>
+				<source src="./res/data/prom-vid.mov" type="video/mp4" />
+			</video>
+		</div>
+
+		<div class="row">
+			<h4 id="docs" class="section-header"></h4>
+			<table class="table">
+				<tbody>
+					<tr>
+						<th id="docs-1" scope="row">1</th>
+						<th class="d-flex justify-content-end">
+							<a id="docs-1a" class="btn btn-primary" role="button" download></a>
+						</th>
+					  </tr>
+					  <tr>
+						<th id="docs-2" scope="row">2</th>
+						<th class="d-flex justify-content-end">
+							<a id="docs-2a" class="btn btn-primary" role="button" download></a>
+						</th>
+					  </tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 
@@ -52,19 +76,42 @@
 		"en": {
 			"profile": "Profile",
 			"research": "Research",
-			"legal-notice": "Legal notice"
+			"legal-notice": "Legal notice",
+			"docs": "Documents",
+			"docs-1": "Consent form",
+			"docs-1a": "Download",
+			"docs-2": "Information sheet on data protection and research project",
+			"docs-2a": "Download",
 		},
 		"jp": {
 			"profile": "私について",
 			"research": "研究について",
-			"legal-notice": "法的通知"
+			"legal-notice": "法的通知",
+			"docs": "書類",
+			"docs-1": "研究参加の同意書",
+			"docs-1a": "ダウンロード",
+			"docs-2": "データ保護と研究プロジェクトについての情報⽤紙",
+			"docs-2a": "ダウンロード",
 		}
 	};
 
+	const downloads = {
+		"en": {
+			"docs-1a": "Consent form.pdf",
+			"docs-2a": "Information sheet on data protection and research project.pdf",
+		},
+		"jp": {
+			"docs-1a": "研究参加の同意書.pdf",
+			"docs-2a": "データ保護と研究プロジェクトについての情報⽤紙.pdf",
+		}
+	}
+
 	loadLocale(langRes);
+	setHrefLocale(downloads);
 
 	function onLocaleChanged() {
 		setLocale(langRes);
+		setHrefLocale(downloads);
 	}
 </script>
 
