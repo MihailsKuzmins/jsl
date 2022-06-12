@@ -8,7 +8,7 @@ function loadLocale(langRes) {
 
 	const locale = localStorage.getItem(localeKey) || "en";
 	element.value = locale;
-	setLocalePrivate(locale, langRes);
+	setLocalePrivate(locale, langRes, "innerHTML");
 }
 
 function setLocale(langRes) {
@@ -18,10 +18,19 @@ function setLocale(langRes) {
 	}
 
 	localStorage.setItem(localeKey, element.value);
-	setLocalePrivate(element.value, langRes);
+	setLocalePrivate(element.value, langRes, "innerHTML");
 }
 
-function setLocalePrivate(locale, langRes) {
+function setHrefLocale(downloads) {
+	const element = getLocaleSelector();
+	if (!element) {
+		return;
+	}
+
+	setLocalePrivate(element.value, downloads, "href", getHrefPath);
+}
+
+function setLocalePrivate(locale, langRes, attr, func) {
 	const obj = langRes[locale];
 	if (!obj) {
 		return;
@@ -30,11 +39,19 @@ function setLocalePrivate(locale, langRes) {
 	for (const key of Object.keys(obj)) {
 		const localeElem = document.getElementById(key);
 		if (localeElem) {
-			localeElem.innerHTML = obj[key];
+			if (func) {
+				localeElem[attr] = func(obj[key]);
+			} else {
+				localeElem[attr] = obj[key];
+			}
 		}
 	}
 }
 
 function getLocaleSelector() {
 	return document.getElementById("lang-selector");
+}
+
+function getHrefPath(fileName) {
+	return "./res/data/" + fileName;
 }
