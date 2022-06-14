@@ -25,7 +25,13 @@
 	max-width: 350px !important;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 576px) {
+	.prof-pic-container {
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 768px) {
 	.prof-pic {
 		max-width: 250px !important;
 	}
